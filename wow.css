@@ -1,0 +1,109 @@
+/* تنسيق صفحة الويب العامة */
+body {
+    font-family: Tahoma, sans-serif;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 50px 0;
+  }
+  
+  /* الحاوية الرئيسية لتوزيع الكاردات جنب بعض وفي النص */
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* الكارد الأساسي */
+  .my-card {
+    position: relative;
+    width: 280px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  /* صندوق الصورة */
+  .image-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  /* طبقة اللون (Overlay) فوق الصورة */
+  .image-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(15, 23, 42, 0.85));
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 1;
+  }
+  
+  /* صندوق البيانات والنصوص المخفية تحت الكارد */
+  .content-box {
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #0f172a;
+    box-sizing: border-box;
+    text-align: center;
+    transition: bottom 0.4s ease-in-out;
+    z-index: 2;
+  }
+  
+  .content-box h3 {
+    margin: 0 0 8px 0;
+    color: #ffffff;
+    font-size: 18px;
+  }
+  
+  /* ==== تعديلات فقرة الكلام (p) هنا ==== */
+  .content-box p {
+    margin: 0;
+    color: #e2e8f0;          /* لون الكلام (ممكن تخليها مثلاً #ffcc00 للأصفر أو white للأبيض) */
+    font-family: 'Arial', sans-serif; /* شكل الخط (ممكن تغيره زي Cairo أو Tahoma أو Arial) */
+    font-weight: 600;         /* تخن أو سمك الخط (من 100 لحد 900، أو استخدم normal أو bold) */
+    font-size: 14px;          /* حجم الخط */
+    font-style:unset;
+  }
+  
+  /* تأثير الهوفر (لما تقف بالماوس على الكارد) */
+  .my-card:hover .image-box img {
+    transform: scale(1.1);
+  }
+  
+  .my-card:hover .image-box {
+    transform: translateY(-80px);
+  }
+  
+  .my-card:hover .image-box .overlay {
+    opacity: 1;
+  }
+  
+  .my-card:hover .content-box {
+    bottom: 0;
+  }
+.h1{
+    color: rgb(64, 116, 98);
+    font-style: oblique;
+}
